@@ -11,11 +11,13 @@ Pod::Spec.new do |s|
 
   s.name                      = companyPrefix + projName
   s.summary                   = projSummary
-  s.version                   = '0.0.1'
+  s.version                   = '1.0.0'
   s.homepage                  = companyGitHubPage + '/' + projName
   
   s.source                    = { :git => companyGitHubAccount + '/' + projName + '.git', :tag => s.version }
   
+  s.osx.deployment_target     = '10.11'
+  s.ios.deployment_target     = '9.0'
   s.requires_arc              = true
   
   s.license                   = { :type => 'MIT', :file => 'LICENSE' }
@@ -23,23 +25,23 @@ Pod::Spec.new do |s|
 
   s.default_subspec = 'Core'
 
-  s.subspec 'Core' do |subS|
+  s.subspec 'Core' do |ss|
 
-    subS.osx.deployment_target     = '10.11'
-    subS.ios.deployment_target     = '8.0'
+    ss.osx.deployment_target  = '10.11'
+    ss.ios.deployment_target  = '9.0'
 
-    subS.source_files         = 'Sources/Core/**/*.swift'
+    ss.source_files           = 'Sources/Core/**/*.swift'
 
   end
 
-  s.subspec 'UIKit' do |subS|
+  s.subspec 'UIKit' do |ss|
 
-    subS.ios.deployment_target     = '8.0'
+    ss.ios.deployment_target  = '9.0'
 
-    subS.framework            = 'UIKit'
-    subS.dependency           s.name + '/Core'
+    ss.framework              = 'UIKit'
+    ss.dependency               s.name + '/Core'
   
-    subS.source_files         = 'Sources/UIKit/**/*.swift'
+    ss.source_files           = 'Sources/UIKit/**/*.swift'
 
   end
 
