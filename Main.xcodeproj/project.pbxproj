@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		14130D638910E528BEF49EA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D910078B9B49C6E071776A3 /* Foundation.framework */; };
-		866D62E247546947AA89BC74 /* ModelDependable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366214A8E1B8313DA35E6EC3 /* ModelDependable.swift */; };
-		D5D2677FDD0A69D5C6A8D458 /* ModelConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074409FA420DD6C1AC5621E9 /* ModelConfigurable.swift */; };
-		E152E14083AA5B9C66F22F31 /* ModelDependableViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3B3E5FDAA3831A1E39C6D /* ModelDependableViewCtrl.swift */; };
+		94F4B2001F7EB2F000058BD3 /* ModelConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F4B1FE1F7EB2EB00058BD3 /* ModelConfigurable.swift */; };
+		94F4B2011F7EB2F000058BD3 /* ModelDependable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F4B1FF1F7EB2EB00058BD3 /* ModelDependable.swift */; };
+		94F4B20A1F7EB47000058BD3 /* ModelDependableViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F4B2091F7EB46A00058BD3 /* ModelDependableViewCtrl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,11 +27,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		074409FA420DD6C1AC5621E9 /* ModelConfigurable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModelConfigurable.swift; sourceTree = "<group>"; };
-		366214A8E1B8313DA35E6EC3 /* ModelDependable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModelDependable.swift; sourceTree = "<group>"; };
 		4D910078B9B49C6E071776A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		9AE3B3E5FDAA3831A1E39C6D /* ModelDependableViewCtrl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModelDependableViewCtrl.swift; sourceTree = "<group>"; };
-		AB165156BE5A43F18AB27E6C /* Fwk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Fwk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94F4B1FE1F7EB2EB00058BD3 /* ModelConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelConfigurable.swift; sourceTree = "<group>"; };
+		94F4B1FF1F7EB2EB00058BD3 /* ModelDependable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDependable.swift; sourceTree = "<group>"; };
+		94F4B2091F7EB46A00058BD3 /* ModelDependableViewCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDependableViewCtrl.swift; sourceTree = "<group>"; };
+		AB165156BE5A43F18AB27E6C /* Fwk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Fwk.framework; path = XCEModelDependable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,14 +80,29 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		94F4B1FD1F7EB2EB00058BD3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				94F4B1FE1F7EB2EB00058BD3 /* ModelConfigurable.swift */,
+				94F4B1FF1F7EB2EB00058BD3 /* ModelDependable.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		94F4B2081F7EB46A00058BD3 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				94F4B2091F7EB46A00058BD3 /* ModelDependableViewCtrl.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		9CEC417CE8DAF045B69BCC27 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				074409FA420DD6C1AC5621E9 /* ModelConfigurable.swift */,
-				366214A8E1B8313DA35E6EC3 /* ModelDependable.swift */,
-				9AE3B3E5FDAA3831A1E39C6D /* ModelDependableViewCtrl.swift */,
+				94F4B1FD1F7EB2EB00058BD3 /* Core */,
+				94F4B2081F7EB46A00058BD3 /* UIKit */,
 			);
-			name = Sources;
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
 		};
@@ -95,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 			);
-			name = "$local";
+			name = $local;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +175,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-			showEnvVarsInLog = 1;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -169,9 +183,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5D2677FDD0A69D5C6A8D458 /* ModelConfigurable.swift in Sources */,
-				866D62E247546947AA89BC74 /* ModelDependable.swift in Sources */,
-				E152E14083AA5B9C66F22F31 /* ModelDependableViewCtrl.swift in Sources */,
+				94F4B2001F7EB2F000058BD3 /* ModelConfigurable.swift in Sources */,
+				94F4B2011F7EB2F000058BD3 /* ModelDependable.swift in Sources */,
+				94F4B20A1F7EB47000058BD3 /* ModelDependableViewCtrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
