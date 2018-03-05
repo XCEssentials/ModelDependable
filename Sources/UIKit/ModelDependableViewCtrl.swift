@@ -33,22 +33,3 @@ protocol ModelDependableViewCtrl: ModelDependable
 {
     associatedtype View: UIView, ModelDependable where View.Model == Self.Model
 }
-
-//===
-
-public
-extension ModelDependableViewCtrl where Self: UIViewController
-{
-    var customView: View!
-    {
-        get
-        {
-            return view as! View // swiftlint:disable:this force_cast
-        }
-        
-        set
-        {
-            view = newValue
-        }
-    }
-}
