@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		14130D638910E528BEF49EA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D910078B9B49C6E071776A3 /* Foundation.framework */; };
+		94A20A67204D8CEA002253EF /* ModelDependableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20A66204D8CEA002253EF /* ModelDependableView.swift */; };
+		94A20A69204D8D24002253EF /* ModelDependableViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20A68204D8D24002253EF /* ModelDependableViewCtrl.swift */; };
+		94A20A6D204D8F26002253EF /* ModelDependableViewCtrl+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A20A6C204D8F26002253EF /* ModelDependableViewCtrl+UIKit.swift */; };
 		94F4B2001F7EB2F000058BD3 /* ModelConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F4B1FE1F7EB2EB00058BD3 /* ModelConfigurable.swift */; };
 		94F4B2011F7EB2F000058BD3 /* ModelDependable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F4B1FF1F7EB2EB00058BD3 /* ModelDependable.swift */; };
-		94F4B20A1F7EB47000058BD3 /* ModelDependableViewCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F4B2091F7EB46A00058BD3 /* ModelDependableViewCtrl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,9 +30,11 @@
 
 /* Begin PBXFileReference section */
 		4D910078B9B49C6E071776A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		94A20A66204D8CEA002253EF /* ModelDependableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDependableView.swift; sourceTree = "<group>"; };
+		94A20A68204D8D24002253EF /* ModelDependableViewCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDependableViewCtrl.swift; sourceTree = "<group>"; };
+		94A20A6C204D8F26002253EF /* ModelDependableViewCtrl+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelDependableViewCtrl+UIKit.swift"; sourceTree = "<group>"; };
 		94F4B1FE1F7EB2EB00058BD3 /* ModelConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelConfigurable.swift; sourceTree = "<group>"; };
 		94F4B1FF1F7EB2EB00058BD3 /* ModelDependable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDependable.swift; sourceTree = "<group>"; };
-		94F4B2091F7EB46A00058BD3 /* ModelDependableViewCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDependableViewCtrl.swift; sourceTree = "<group>"; };
 		AB165156BE5A43F18AB27E6C /* Fwk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Fwk.framework; path = XCEModelDependable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,28 +84,30 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		94F4B1FD1F7EB2EB00058BD3 /* Core */ = {
+		94A20A6B204D8F12002253EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				94A20A6C204D8F26002253EF /* ModelDependableViewCtrl+UIKit.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		94F4B1FD1F7EB2EB00058BD3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				94F4B1FE1F7EB2EB00058BD3 /* ModelConfigurable.swift */,
 				94F4B1FF1F7EB2EB00058BD3 /* ModelDependable.swift */,
+				94A20A66204D8CEA002253EF /* ModelDependableView.swift */,
+				94A20A68204D8D24002253EF /* ModelDependableViewCtrl.swift */,
 			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		94F4B2081F7EB46A00058BD3 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				94F4B2091F7EB46A00058BD3 /* ModelDependableViewCtrl.swift */,
-			);
-			path = UIKit;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		9CEC417CE8DAF045B69BCC27 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				94F4B1FD1F7EB2EB00058BD3 /* Core */,
-				94F4B2081F7EB46A00058BD3 /* UIKit */,
+				94F4B1FD1F7EB2EB00058BD3 /* Common */,
+				94A20A6B204D8F12002253EF /* iOS */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -183,9 +189,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94A20A6D204D8F26002253EF /* ModelDependableViewCtrl+UIKit.swift in Sources */,
+				94A20A67204D8CEA002253EF /* ModelDependableView.swift in Sources */,
+				94A20A69204D8D24002253EF /* ModelDependableViewCtrl.swift in Sources */,
 				94F4B2001F7EB2F000058BD3 /* ModelConfigurable.swift in Sources */,
 				94F4B2011F7EB2F000058BD3 /* ModelDependable.swift in Sources */,
-				94F4B20A1F7EB47000058BD3 /* ModelDependableViewCtrl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
