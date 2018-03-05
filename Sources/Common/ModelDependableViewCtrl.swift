@@ -31,17 +31,3 @@ protocol ModelDependableViewCtrl
     associatedtype ViewModel
     associatedtype View: ModelDependableView where View.ViewModel == Self.ViewModel
 }
-
-//---
-
-public
-protocol NoViewModel
-{
-    associatedtype Model
-}
-
-public
-extension NoViewModel
-{
-    typealias ViewModel = Model
-}
